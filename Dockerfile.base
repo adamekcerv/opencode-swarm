@@ -1,0 +1,24 @@
+# Base Dockerfile for Swarm Agents
+# Uses Node.js LTS with OpenCode agent configuration
+
+FROM node:22-alpine AS base
+
+RUN apk add --no-cache curl jq bash
+
+WORKDIR /app
+
+COPY agents/shared/ ./agents/shared/
+COPY .opencode/ ./opencode/
+COPY .env.example ./
+
+RUN addgroup -S swarm && adduser -S swarm -G swarm
+USER swarm
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+    CMD curl -f http://localhost:${AGENT_PORT}/config || exit 1
+
+ENV LOG_LEVEL=INFO \
+    LOG_MAX_SIZE_MB=10 \
+    LOG_MAX_FILES=5
+
+CMD ["node", "server.js"]

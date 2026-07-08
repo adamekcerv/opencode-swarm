@@ -17,6 +17,6 @@
 - [x] Otestovat obnovu po chybě (Disaster Recovery) pro případ pádu jednoho z uzlů.
 
 ## Fáze 4: Příprava na nasazení (Deployment)
-- [ ] Vytvořit Dockerfile pro izolovaný běh každého agenta.
+- [x] Vytvořit Dockerfile pro izolovaný běh každého agenta.
 - [ ] Připravit CI/CD pipeline skript.
 - [ ] Provést finální end-to-end (E2E) test kompletního roje (Swarm).

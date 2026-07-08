@@ -1,0 +1,96 @@
+version: "3.9"
+
+services:
+  orchestrator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: swarm-orchestrator
+    ports:
+      - "3000:3000"
+    environment:
+      - AGENT_PORT=3000
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    networks:
+      - swarm-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/config"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 512M
+
+  database_agent:
+    build:
+      context: .
+      dockerfile: agents/db/Dockerfile
+    container_name: swarm-database-agent
+    ports:
+      - "3001:3001"
+    environment:
+      - AGENT_PORT=3001
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - DB_HOST=database_agent
+      - DB_PORT=3001
+      - DB_PASSWORD=${DB_PASSWORD:-swarm_dev}
+    volumes:
+      - db_data:/data
+    networks:
+      - swarm-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/config"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+
+  security_agent:
+    build:
+      context: .
+      dockerfile: agents/security/Dockerfile
+    container_name: swarm-security-agent
+    ports:
+      - "3002:3002"
+    environment:
+      - AGENT_PORT=3002
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - swarm-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3002/config"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+
+networks:
+  swarm-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.0.0/24
+
+volumes:
+  db_data:
+    driver: local

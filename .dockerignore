@@ -1,0 +1,14 @@
+# Ignore in Docker builds
+node_modules
+.git
+.env
+*.log
+*_*.log
+__pycache__
+.vscode
+.idea
+Thumbs.db
+.DS_Store
+Dockerfile*
+docker-compose*.yml
+.dockerignore
