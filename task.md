@@ -8,7 +8,7 @@
 ## Fáze 2: Vývoj sub-agentů a komunikace (Probíhá)
 - [x] Vytvořit profil pro `database_agent` ve složce `/agents/db/`.
 - [x] Vytvořit profil pro `security_agent` ve složce `/agents/security/`.
-- [ ] Implementovat povinný komunikační protokol pro předávání zpráv mezi agenty.
+- [x] Implementovat povinný komunikační protokol pro předávání zpráv mezi agenty.
 - [ ] Napsat integrační testy pro ověření komunikace přes porty 3001-3010.
 
 ## Fáze 3: Produkční standardy a zabezpečení
