@@ -13,7 +13,7 @@
 
 ## Fáze 3: Produkční standardy a zabezpečení
 - [x] Implementovat rotaci logů a bezpečné ukládání API klíčů (žádné hardcoded secrets).
-- [ ] Přidat fallback mechanismus (pokud primární server agenta neodpovídá, přepnout na záložní).
+- [x] Přidat fallback mechanismus (pokud primární server agenta neodpovídá, přepnout na záložní).
 - [ ] Otestovat obnovu po chybě (Disaster Recovery) pro případ pádu jednoho z uzlů.
 
 ## Fáze 4: Příprava na nasazení (Deployment)
