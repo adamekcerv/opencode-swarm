@@ -1,0 +1,22 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "openrouter/deepseek/deepseek-v4-flash",
+  "default_agent": "security_agent",
+  "agent": {
+    "security_agent": {
+      "description": "Security specialist agent - handles vulnerability scanning, security audits, threat analysis, and compliance checks for the swarm.",
+      "mode": "all",
+      "model": "openrouter/deepseek/deepseek-v4-flash"
+    }
+  },
+  "permission": {
+    "bash": {
+      "curl *": "allow",
+      "npm audit *": "allow",
+      "bandit *": "allow",
+      "trivy *": "allow",
+      "gitleaks *": "allow",
+      "*": "ask"
+    }
+  }
+}
