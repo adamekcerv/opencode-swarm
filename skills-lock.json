@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "opencode-orchestrator-creator": {
+      "source": "smithery.ai",
+      "sourceType": "well-known",
+      "computedHash": "284e12c72f2e83a79d9a0d0b3a0eddf70603a3079e7b52dc9e2ca24ac5bbe9a4"
+    }
+  }
+}

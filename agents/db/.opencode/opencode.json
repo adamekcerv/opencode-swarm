@@ -1,0 +1,21 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "openrouter/deepseek/deepseek-v4-flash",
+  "default_agent": "database_agent",
+  "agent": {
+    "database_agent": {
+      "description": "Database specialist agent - handles data storage, retrieval, SQL queries, schema design, and data integrity for the swarm.",
+      "mode": "all",
+      "model": "openrouter/deepseek/deepseek-v4-flash"
+    }
+  },
+  "permission": {
+    "bash": {
+      "sqlite3 *": "allow",
+      "psql *": "allow",
+      "mysql *": "allow",
+      "curl *": "allow",
+      "*": "ask"
+    }
+  }
+}
