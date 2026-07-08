@@ -18,5 +18,5 @@
 
 ## Fáze 4: Příprava na nasazení (Deployment)
 - [x] Vytvořit Dockerfile pro izolovaný běh každého agenta.
-- [ ] Připravit CI/CD pipeline skript.
+- [x] Připravit CI/CD pipeline skript.
 - [ ] Provést finální end-to-end (E2E) test kompletního roje (Swarm).
