@@ -3,7 +3,11 @@
 
 FROM node:22-alpine
 
-RUN apk add --no-cache curl jq bash trivy
+RUN apk add --no-cache curl jq bash && \
+    curl -sfL https://github.com/aquasecurity/trivy/releases/download/v0.72.0/trivy_0.72.0_Linux-64bit.tar.gz -o trivy.tar.gz && \
+    tar xzf trivy.tar.gz trivy && \
+    mv trivy /usr/local/bin/trivy && \
+    rm trivy.tar.gz
 
 WORKDIR /app
 

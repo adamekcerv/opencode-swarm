@@ -1,0 +1,12 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "openrouter/deepseek/deepseek-v4-flash",
+  "default_agent": "code_review",
+  "permission": {
+    "bash": {
+      "curl *": "allow",
+      "jq *": "allow",
+      "*": "ask"
+    }
+  }
+}

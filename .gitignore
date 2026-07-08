@@ -21,5 +21,8 @@ node_modules/
 .venv/
 __pycache__/
 
+# App projects (each has its own git repo)
+apps/
+
 # Docker
 *.tar
