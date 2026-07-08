@@ -1,6 +1,0 @@
-2026-07-08 10:49:49.639 [INFO] Received valid protocol message at Database Agent (db)
-2026-07-08 10:49:49.657 [WARN] Received invalid protocol message at Security Agent: rejecting
-2026-07-08 10:49:49.662 [INFO] Sending message from Test Agent (test) to http://localhost:9999
-2026-07-08 10:49:51.748 [ERROR] HTTP request to http://localhost:9999 failed: Platnost operace vypršela. (retry 0/1)
-2026-07-08 10:49:55.797 [ERROR] HTTP request to http://localhost:9999 failed: Platnost operace vypršela. (retry 1/1)
-2026-07-08 10:49:55.798 [ERROR] All retries exhausted for http://localhost:9999

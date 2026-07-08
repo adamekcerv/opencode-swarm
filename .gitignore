@@ -1,0 +1,25 @@
+# Environment secrets
+.env
+
+# Runtime artifacts
+agents/shared/swarm_communication.log
+agents/shared/*.log
+
+# Log rotation archives
+*_20*.log
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Dependencies
+node_modules/
+.venv/
+__pycache__/
+
+# Docker
+*.tar

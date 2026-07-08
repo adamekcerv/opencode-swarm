@@ -12,7 +12,7 @@
 - [x] Napsat integrační testy pro ověření komunikace přes porty 3001-3010.
 
 ## Fáze 3: Produkční standardy a zabezpečení
-- [ ] Implementovat rotaci logů a bezpečné ukládání API klíčů (žádné hardcoded secrets).
+- [x] Implementovat rotaci logů a bezpečné ukládání API klíčů (žádné hardcoded secrets).
 - [ ] Přidat fallback mechanismus (pokud primární server agenta neodpovídá, přepnout na záložní).
 - [ ] Otestovat obnovu po chybě (Disaster Recovery) pro případ pádu jednoho z uzlů.
 
